@@ -1,0 +1,19 @@
+/*
+Theme Name: Spendvest
+Theme URI: https://spendvest.com
+Author: Spendvest
+Author URI: https://spendvest.com
+Description: Тема для сайту Spendvest.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: spendvest
+*/
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+.site { min-height: 100vh; display: flex; flex-direction: column; }
+.site__main { flex: 1; }

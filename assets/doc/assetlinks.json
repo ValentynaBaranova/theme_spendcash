@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.spendvestcorp.app",
+            "sha256_cert_fingerprints": [
+                "DE:65:84:35:9C:B8:BC:2D:82:3E:FB:66:01:5B:42:45:FC:10:FD:40:84:3A:F8:A0:4F:B8:64:7B:4B:D6:41:8B"
+            ]
+        }
+    }
+]
