@@ -1,9 +1,9 @@
-# Spendvest WordPress Theme
+# Spendcash  WordPress Theme
 
-Custom WordPress theme for the [Spendvest](https://spendvest.com) marketing website. The theme powers the landing page, blog, legal pages, waitlist flow, and mobile deep-link landing pages for the Spendvest mobile app.
+Custom WordPress theme for the marketing website. The theme powers the landing page, blog, legal pages, waitlist flow, and mobile deep-link landing pages for the Spendcash mobile app.
 
 **Version:** 1.0.0  
-**Text domain:** `spendvest`  
+**Text domain:** `Spendcash`  
 **License:** GPL v2 or later
 
 ---
@@ -26,8 +26,8 @@ Custom WordPress theme for the [Spendvest](https://spendvest.com) marketing webs
 
 ## Installation
 
-1. Copy the `spendvest` folder into `wp-content/themes/`.
-2. In **Appearance → Themes**, activate **Spendvest**.
+1. Copy the `Spendcash` folder into `wp-content/themes/`.
+2. In **Appearance → Themes**, activate **Spendcash**.
 3. Go to **Settings → Permalinks** and click **Save Changes** to flush rewrite rules (also done automatically on theme activation).
 4. Install and activate **ACF** and **Contact Form 7**.
 5. Import or recreate ACF field groups used by the theme (home page sections, theme options, simple page fields, blog hero).
@@ -94,7 +94,7 @@ GSAP 3.12.5 (ScrollTrigger, MotionPathPlugin) is loaded from jsDelivr CDN. Custo
 - **PageView** — tracked on every page via `wp_head`.
 - **Lead** — tracked on the Thank You template, with optional `eventID` from `sessionStorage` for deduplication with server-side events.
 
-Pixel ID is defined in `functions.php` (`spendvest_meta_pixel_head`).
+Pixel ID is defined in `functions.php` (`Spendcash_meta_pixel_head`).
 
 ### Contact Form 7 → Beehiiv
 
@@ -112,7 +112,7 @@ Hidden fields expected in the form:
 | `sv_utm_content` | UTM content |
 | `sv_event_id` | Event ID for pixel deduplication |
 
-The thank-you redirect URL is exposed to JavaScript as `spendvestTheme.thankYouUrl` (filterable via `spendvest_thank_you_url`).
+The thank-you redirect URL is exposed to JavaScript as `SpendcashTheme.thankYouUrl` (filterable via `Spendcash_thank_you_url`).
 
 ### Mobile deep links (`/dl/` and `/ref/`)
 
@@ -121,15 +121,15 @@ Custom rewrite rules route mobile visitors to a lightweight app-open landing pag
 - `/dl/` and `/dl/{path}` — download / open app links
 - `/ref/` and `/ref/{path}` — referral links
 
-Desktop visitors are redirected to the home page. Deep links use the `spendvest://` URL scheme.
+Desktop visitors are redirected to the home page. Deep links use the `Spendcash://` URL scheme.
 
 **Filters for store URLs** (add to a child theme or mu-plugin):
 
 ```php
-add_filter('spendvest_dl_app_store_url', function () {
+add_filter('Spendcash_dl_app_store_url', function () {
     return 'https://apps.apple.com/app/…';
 });
-add_filter('spendvest_dl_play_store_url', function () {
+add_filter('Spendcash_dl_play_store_url', function () {
     return 'https://play.google.com/store/apps/details?id=…';
 });
 ```
@@ -159,7 +159,7 @@ The Gutenberg block editor is disabled site-wide. Content is managed through ACF
 ## File Structure
 
 ```
-spendvest/
+Spendcash/
 ├── style.css                 # Theme metadata & minimal base styles
 ├── functions.php             # Enqueues, integrations, rewrite rules
 ├── header.php
@@ -192,24 +192,24 @@ spendvest/
 
 ### Asset cache busting
 
-Styles and scripts use `filemtime()` for versioning in `spendvest_scripts()`, so changes to CSS/JS are picked up without manual version bumps.
+Styles and scripts use `filemtime()` for versioning in `Spendcash_scripts()`, so changes to CSS/JS are picked up without manual version bumps.
 
 ### Constants
 
 | Constant | Value |
 |----------|-------|
-| `SPENDVEST_VERSION` | `1.0.0` |
-| `SPENDVEST_DIR` | Absolute path to the theme directory |
-| `SPENDVEST_URI` | Theme directory URL |
+| `Spendcash_VERSION` | `1.0.0` |
+| `Spendcash_DIR` | Absolute path to the theme directory |
+| `Spendcash_URI` | Theme directory URL |
 
 ### Useful filters
 
 | Filter | Description |
 |--------|-------------|
-| `spendvest_thank_you_url` | Override the thank-you page URL |
-| `spendvest_dl_deep_link` | Customize the `spendvest://` deep link |
-| `spendvest_dl_app_store_url` | Apple App Store fallback URL |
-| `spendvest_dl_play_store_url` | Google Play Store fallback URL |
+| `Spendcash_thank_you_url` | Override the thank-you page URL |
+| `Spendcash_dl_deep_link` | Customize the `Spendcash://` deep link |
+| `Spendcash_dl_app_store_url` | Apple App Store fallback URL |
+| `Spendcash_dl_play_store_url` | Google Play Store fallback URL |
 
 ### After deployment
 
